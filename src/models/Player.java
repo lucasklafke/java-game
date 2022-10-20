@@ -5,7 +5,7 @@ public class Player {
     private String position;
     private String name;
 
-    public void Player(String name, String position) {
+    public Player(String name, String position) {
         this.position = position;
         this.name = name;
     }
@@ -33,4 +33,5 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
+
 }
