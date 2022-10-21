@@ -1,7 +1,9 @@
 import models.Monster;
 import models.Player;
+import models.Position;
 import models.Square;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -22,10 +24,12 @@ public class Main {
                 System.out.print("diga seu nome:");
                 String playerName = sc.nextLine(); //reads string.
 
-                System.out.print("diga sua coordenada inicial:");
-                String position = sc.nextLine();
+                System.out.print("diga sua coordenada inicial \n x: :");
+                int x = sc.nextInt();
+                System.out.print("y:");
+                int y = sc.nextInt();
 
-                playersList.add(new Player(playerName, position));
+                playersList.add(new Player(playerName, x, y));
 
                 System.out.print("deseja continuar? Caso não queira digite n");
                 continua = sc.nextLine();

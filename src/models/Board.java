@@ -22,6 +22,11 @@ public class Board {
         }
     };
 
+    public void move() {
+        Player player = players.get(currentPlayer);
+        //
+    }
+
     public void nextPlayer() {
         if(this.players.size() > this.currentPlayer) {
             this.currentPlayer++;
