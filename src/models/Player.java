@@ -1,15 +1,20 @@
 package models;
 
+import interfaces.BattleMember;
+
 import java.util.Scanner;
 
-public class Player {
+public class Player implements BattleMember {
   private double health = 300.0;
   private Position position;
   private String name;
 
+  private int damage = 35;
+
   public Player(String name, int x, int y) {
     this.position = new Position(x, y);
     this.name = name;
+
   }
 
   public void walk() {
@@ -49,6 +54,10 @@ public class Player {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public int getDamage() {
+    return this.damage;
   }
 
 }

@@ -6,15 +6,6 @@ public class Square {
     public static int counter;
     private int quantityLayer;
     private int currentLayer;
-    private String position;
-
-    public Square(String position) {
-        this.position = position;
-    }
-
-    public String getPosition() {
-        return this.position;
-    }
 
     public int getQuantityLayer() {
         return quantityLayer;
@@ -32,18 +23,14 @@ public class Square {
         this.currentLayer = currentLayer;
     }
 
-    public void randomizeMonsterOrPotion() {
+    public Boolean randomizeMonster() {
         Random random = new Random();
         int number = random.nextInt(100);
         if(number <= 10) {
-            if(number < Monster.getMonstersSize()) {
-                Monster monster = Monster.randomizeMonster();
-//                Battle battle = new Battle(monster);
-            } else {
-                Potion potion = new Potion();
-            }
+            return true;
         }
-
+        return false;
     }
+
 
 }

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Board {
-  private Square[] squares = new Square[64];
+  private Square[][] squares = new Square[8][8];
   private List<Player> players = new ArrayList<>();
 
   private int currentPlayer;
@@ -18,14 +18,26 @@ public class Board {
 
   private void CreateSquares() {
     for (int i = 0; i < 64; i++) {
-      Square square = new Square(String.format("%s", i));
-      squares[i] = square;
+      for (int j = 0; j < 64; j++) {
+
+        Square square = new Square();
+        squares[i][j] = square;
+      }
     }
   };
 
   public void move() {
     Player player = players.get(currentPlayer);
     player.walk();
+    Position position = player.getPosition();
+    Square square = squares[position.getX()][position.getY()];
+    Boolean monsterExist = square.randomizeMonster();
+    if(monsterExist) {
+      Monster monster = Monster.randomizeMonster();
+      Battle battle = new Battle(monster, player);
+    }
+//    square.randomizePotion();
+
   }
 
   public void nextPlayer() {

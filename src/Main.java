@@ -43,6 +43,6 @@ public class Main {
       Board board = new Board(playersList);
       board.move();
     }
-    Square square = new Square("1");
+    Square square = new Square();
   }
 }

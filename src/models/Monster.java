@@ -1,10 +1,12 @@
 package models;
 
+import interfaces.BattleMember;
+
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Monster {
-    private int health;
+public class Monster implements BattleMember {
+    private double health;
     private int damage;
     private String name;
     private static ArrayList<Monster> monsters = new ArrayList<>();
@@ -26,11 +28,11 @@ public class Monster {
         return monsters.size();
     };
 
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    public void setHealth(double health) {
         this.health = health;
     }
 

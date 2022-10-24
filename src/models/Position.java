@@ -1,5 +1,8 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Position {
   private static int maxPosition = 7;
   private static int minPosition = 0;
