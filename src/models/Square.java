@@ -3,16 +3,17 @@ package models;
 import java.util.Random;
 
 public class Square {
+    Random random = new Random();
     public static int counter;
-    private int quantityLayer;
+    private final  int quantityLayer;
     private int currentLayer;
 
+    public Square(){
+        this.quantityLayer = random.nextInt(7);
+        setCurrentLayer(getQuantityLayer());
+    }
     public int getQuantityLayer() {
         return quantityLayer;
-    }
-
-    public void setQuantityLayer(int quantityLayer) {
-        this.quantityLayer = quantityLayer;
     }
 
     public int getCurrentLayer() {
@@ -20,11 +21,15 @@ public class Square {
     }
 
     public void setCurrentLayer(int currentLayer) {
-        this.currentLayer = currentLayer;
+        if(currentLayer >= 0){
+            this.currentLayer = currentLayer;
+        }
     }
 
     public Boolean randomizeMonster() {
-        Random random = new Random();
+        if(this.getCurrentLayer() > 0) {
+            this.currentLayer--;
+        }
         int number = random.nextInt(100);
         if(number <= 10) {
             return true;

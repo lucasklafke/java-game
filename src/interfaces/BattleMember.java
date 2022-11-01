@@ -8,4 +8,6 @@ public interface BattleMember {
 
     public void setHealth(double health);
 
+    public String getName();
+
 }

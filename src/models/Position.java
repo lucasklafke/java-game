@@ -38,7 +38,7 @@ public class Position {
         return false;
 
     } else if (direction.equals("left")) {
-      if (this.getX() - 1 >= maxPosition) {
+      if (this.getX() - 1 >= minPosition) {
         this.setX(this.getX() - 1);
         return true;
       } else

@@ -20,8 +20,7 @@ public class Monster implements BattleMember {
     public static Monster randomizeMonster() {
         Random random = new Random();
         int index = random.nextInt(monsters.size());
-        Monster monster = monsters.get(index);
-        return monster;
+        return monsters.get(index);
     }
 
     public static int getMonstersSize(){
@@ -29,7 +28,7 @@ public class Monster implements BattleMember {
     };
 
     public double getHealth() {
-        return health;
+        return this.health;
     }
 
     public void setHealth(double health) {

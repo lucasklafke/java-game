@@ -14,13 +14,14 @@ public class Main {
   public static void main(String[] args) {
     boolean trophy = false;
 
-    new Monster("spider", 20, 20);
-    new Monster("dragon", 50, 40);
+    new Monster("spider", 25, 20);
+    new Monster("dragon", 80, 40);
     new Monster("snake", 10, 25);
 
     Scanner sc = new Scanner(System.in);
     String continua = "s";
     List<Player> playersList = new ArrayList<>();
+    Board board = new Board(playersList);
     while (!trophy) {
       while (continua.equals("s")) {
         System.out.print("diga seu nome:");
@@ -40,9 +41,7 @@ public class Main {
         System.out.println(continua.equals("s"));
       }
 
-      Board board = new Board(playersList);
       board.move();
     }
-    Square square = new Square();
   }
 }
