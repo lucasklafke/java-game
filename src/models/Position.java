@@ -71,4 +71,11 @@ public class Position {
       System.out.println("Error");
     }
   }
+
+  public boolean comparePosition(Position position) {
+    if(getX() == position.getX()) {
+      return getY() == position.getY();
+    }
+    return false;
+  }
 }

@@ -7,13 +7,14 @@ import java.util.List;
 public class Board {
   private Square[][] squares = new Square[8][8];
   private List<Player> players = new ArrayList<>();
-
   private int currentPlayer;
+  private final Trophy trophy;
 
   public Board(List<Player> players) {
     this.CreateSquares();
     this.players = players;
     this.currentPlayer = 0;
+    this.trophy = new Trophy();
   }
 
   private void CreateSquares() {
@@ -37,7 +38,9 @@ public class Board {
       Monster monster = Monster.randomizeMonster();
       Battle battle = new Battle(monster, player);
     }
-//    square.randomizePotion();
+    if (player.getPosition().comparePosition(trophy.getPosition()) && square.getCurrentLayer() == 0){
+      trophy.setHidden();
+    }
 
   }
 
@@ -47,5 +50,9 @@ public class Board {
     } else {
       this.currentPlayer = 0;
     }
+  }
+
+  public Trophy getTrophy() {
+    return this.trophy;
   }
 }

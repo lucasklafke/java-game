@@ -29,12 +29,11 @@ public class Square {
     public Boolean randomizeMonster() {
         if(this.getCurrentLayer() > 0) {
             this.currentLayer--;
+            int number = random.nextInt(100);
+            return number <= 10;
+        } else{
+            return false;
         }
-        int number = random.nextInt(100);
-        if(number <= 10) {
-            return true;
-        }
-        return false;
     }
 
 

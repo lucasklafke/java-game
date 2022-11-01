@@ -12,8 +12,6 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    boolean trophy = false;
-
     new Monster("spider", 25, 20);
     new Monster("dragon", 80, 40);
     new Monster("snake", 10, 25);
@@ -22,7 +20,7 @@ public class Main {
     String continua = "s";
     List<Player> playersList = new ArrayList<>();
     Board board = new Board(playersList);
-    while (!trophy) {
+    while (board.getTrophy().getHidden()) {
       while (continua.equals("s")) {
         System.out.print("diga seu nome:");
         String playerName = sc.next(); // reads string.
