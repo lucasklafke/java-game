@@ -9,9 +9,9 @@ public class Trophy {
 
     public Trophy() {
         Random random = new Random();
-//        int x = random.nextInt(8);
-//        int y = random.nextInt(8);
-        position = new Position(2, 2);
+        int x = random.nextInt(8);
+        int y = random.nextInt(8);
+        position = new Position(x, y);
     }
 
     public Position getPosition() {
@@ -22,7 +22,14 @@ public class Trophy {
         return this.hidden;
     }
 
-    public void setHidden(){
-        this.hidden = false;
+    public void setHidden(Boolean visible){
+        this.hidden = visible;
+    }
+
+    public void showPosition() {
+        System.out.println("x:" + this.getPosition().getX() + "y:" + this.getPosition().getY());
+    }
+    public String toString() {
+        return("x:" + this.getPosition().getX() + "y:" + this.getPosition().getY());
     }
 }

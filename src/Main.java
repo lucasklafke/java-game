@@ -3,8 +3,10 @@ import models.Monster;
 import models.Player;
 import models.Position;
 import models.Square;
+import org.w3c.dom.ls.LSOutput;
 
 import java.awt.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -38,8 +40,9 @@ public class Main {
         continua = sc.next();
         System.out.println(continua.equals("s"));
       }
-
+      board.getTrophy().showPosition();
       board.move();
     }
+    System.out.println("you found the trophy");
   }
 }

@@ -4,12 +4,15 @@ import java.util.Random;
 
 public class Square {
     Random random = new Random();
+
     public static int counter;
     private final  int quantityLayer;
     private int currentLayer;
 
+    private Position position;
+
     public Square(){
-        this.quantityLayer = random.nextInt(7);
+        this.quantityLayer = random.nextInt(6)+1;
         setCurrentLayer(getQuantityLayer());
     }
     public int getQuantityLayer() {
@@ -30,7 +33,7 @@ public class Square {
         if(this.getCurrentLayer() > 0) {
             this.currentLayer--;
             int number = random.nextInt(100);
-            return number <= 10;
+            return number <= 50;
         } else{
             return false;
         }

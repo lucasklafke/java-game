@@ -44,16 +44,16 @@ public class Battle {
 
     public void attack(BattleMember attacker, BattleMember deffender) {
         int maxDamage = attacker.getDamage();
-        int damage = random.nextInt(maxDamage/2,maxDamage);
+        int damage = random.nextInt(maxDamage/2) + maxDamage/2;
 
         double deffenderHealth = deffender.getHealth();
         deffenderHealth -= damage;
         deffender.setHealth(deffenderHealth);
         attackMessage(attacker, deffender, damage);
-        if(attacker.getHealth() < 0) {
+        if(attacker.getHealth() <= 0) {
             getMembersHealth(attacker, deffender);
             battleRelatory(attacker, deffender);
-        } else if(deffender.getHealth() < 0) {
+        } else if(deffender.getHealth() <= 0) {
             getMembersHealth(attacker, deffender);
             battleRelatory(attacker, deffender);
         }else{
